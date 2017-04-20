@@ -1,0 +1,77 @@
+@import compass
+@import "compass/layout"
+
+//These are the pad styles
+$divs: 64
+$side: 50px
+$gutter: 15px
+$columns: 8
+$rows: $divs / $columns
+$gridwidth: $columns * ($side + $gutter)
+$fade: 4s
+
+//These are the colours defined as variables
+$default: #181818
+$orange: #ff9100
+$pink: #cc33ff
+$red: #ff6666
+$green: #00ffcc
+$blue: #3399ff
+
+//Basic animation definition
+=animate($animation, $duration, $delay: 0s)
+  animation: $animation $duration ease-in-out $delay infinite
+  -webkit-animation: $animation $duration ease-in-out $delay infinite
+    
+@keyframes pulse
+  50%
+    background: $orange
+@-webkit-keyframes pulse
+  50%
+    background: $orange
+  
+@keyframes flash
+  20%
+    background: $orange
+  40%
+    background: $default
+@-webkit-keyframes flash
+  20%
+    background: $orange
+  40%
+    background: $default
+  
+html
+  background: #111
+
+.grid
+  +stretch(0)
+  height: $rows * ($side + $gutter)
+  width: $gridwidth
+  margin: auto
+  font-size: 0
+  
+  div
+    display: inline-block
+    height: $side
+    width: $side
+    margin: $gutter / 2
+    background: $default
+        
+//Pulse animation
+    
+.blink div  
+  +animate(pulse, 1s)
+
+//Line animation
+
+.hlines div
+  @for $i from 0 through $rows
+    $start: $i * $rows + 1
+    &:nth-child(n + #{$start}):nth-child(-n + #{$start + $rows})
+      +animate(flash, 1s, 1s*($i / $rows))
+        
+.vlines div
+  @for $i from 0 through $columns
+    &:nth-child(#{$columns}n + #{$i})
+      +animate(flash, 1s, 1s*($i / $rows))

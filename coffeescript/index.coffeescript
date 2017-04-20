@@ -1,0 +1,8 @@
+#This resets the animations
+
+gridWidth = $('.grid').width()
+
+$('select').change () ->
+  $grid = $('.grid')
+  $grid.removeClass().width(gridWidth).addClass "grid #{$(this).val()}"
+  

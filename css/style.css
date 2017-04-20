@@ -1,0 +1,127 @@
+@keyframes pulse {
+  50% {
+    background: #ff9100;
+  }
+}
+@-webkit-keyframes pulse {
+  50% {
+    background: #ff9100;
+  }
+}
+@keyframes flash {
+  20% {
+    background: #ff9100;
+  }
+  40% {
+    background: #181818;
+  }
+}
+@-webkit-keyframes flash {
+  20% {
+    background: #ff9100;
+  }
+  40% {
+    background: #181818;
+  }
+}
+html {
+  background: #111;
+}
+
+.grid {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 520px;
+  width: 520px;
+  margin: auto;
+  font-size: 0;
+}
+.grid div {
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  margin: 7.5px;
+  background: #181818;
+}
+
+.blink div {
+  animation: pulse 1s ease-in-out 0s infinite;
+  -webkit-animation: pulse 1s ease-in-out 0s infinite;
+}
+
+.hlines div:nth-child(n + 1):nth-child(-n + 9) {
+  animation: flash 1s ease-in-out 0s infinite;
+  -webkit-animation: flash 1s ease-in-out 0s infinite;
+}
+.hlines div:nth-child(n + 9):nth-child(-n + 17) {
+  animation: flash 1s ease-in-out 0.125s infinite;
+  -webkit-animation: flash 1s ease-in-out 0.125s infinite;
+}
+.hlines div:nth-child(n + 17):nth-child(-n + 25) {
+  animation: flash 1s ease-in-out 0.25s infinite;
+  -webkit-animation: flash 1s ease-in-out 0.25s infinite;
+}
+.hlines div:nth-child(n + 25):nth-child(-n + 33) {
+  animation: flash 1s ease-in-out 0.375s infinite;
+  -webkit-animation: flash 1s ease-in-out 0.375s infinite;
+}
+.hlines div:nth-child(n + 33):nth-child(-n + 41) {
+  animation: flash 1s ease-in-out 0.5s infinite;
+  -webkit-animation: flash 1s ease-in-out 0.5s infinite;
+}
+.hlines div:nth-child(n + 41):nth-child(-n + 49) {
+  animation: flash 1s ease-in-out 0.625s infinite;
+  -webkit-animation: flash 1s ease-in-out 0.625s infinite;
+}
+.hlines div:nth-child(n + 49):nth-child(-n + 57) {
+  animation: flash 1s ease-in-out 0.75s infinite;
+  -webkit-animation: flash 1s ease-in-out 0.75s infinite;
+}
+.hlines div:nth-child(n + 57):nth-child(-n + 65) {
+  animation: flash 1s ease-in-out 0.875s infinite;
+  -webkit-animation: flash 1s ease-in-out 0.875s infinite;
+}
+.hlines div:nth-child(n + 65):nth-child(-n + 73) {
+  animation: flash 1s ease-in-out 1s infinite;
+  -webkit-animation: flash 1s ease-in-out 1s infinite;
+}
+
+.vlines div:nth-child(8n + 0) {
+  animation: flash 1s ease-in-out 0s infinite;
+  -webkit-animation: flash 1s ease-in-out 0s infinite;
+}
+.vlines div:nth-child(8n + 1) {
+  animation: flash 1s ease-in-out 0.125s infinite;
+  -webkit-animation: flash 1s ease-in-out 0.125s infinite;
+}
+.vlines div:nth-child(8n + 2) {
+  animation: flash 1s ease-in-out 0.25s infinite;
+  -webkit-animation: flash 1s ease-in-out 0.25s infinite;
+}
+.vlines div:nth-child(8n + 3) {
+  animation: flash 1s ease-in-out 0.375s infinite;
+  -webkit-animation: flash 1s ease-in-out 0.375s infinite;
+}
+.vlines div:nth-child(8n + 4) {
+  animation: flash 1s ease-in-out 0.5s infinite;
+  -webkit-animation: flash 1s ease-in-out 0.5s infinite;
+}
+.vlines div:nth-child(8n + 5) {
+  animation: flash 1s ease-in-out 0.625s infinite;
+  -webkit-animation: flash 1s ease-in-out 0.625s infinite;
+}
+.vlines div:nth-child(8n + 6) {
+  animation: flash 1s ease-in-out 0.75s infinite;
+  -webkit-animation: flash 1s ease-in-out 0.75s infinite;
+}
+.vlines div:nth-child(8n + 7) {
+  animation: flash 1s ease-in-out 0.875s infinite;
+  -webkit-animation: flash 1s ease-in-out 0.875s infinite;
+}
+.vlines div:nth-child(8n + 8) {
+  animation: flash 1s ease-in-out 1s infinite;
+  -webkit-animation: flash 1s ease-in-out 1s infinite;
+}
